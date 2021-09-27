@@ -15,6 +15,8 @@ const int imageSize = 3;
 
 gameScene::gameScene() {};
 
+// here all the textures are created
+
 gameScene::gameScene(SDL_Renderer * tempRenderer)
 {
     loadIMG[0].images = "../images/background.png";
@@ -44,6 +46,8 @@ gameScene::gameScene(SDL_Renderer * tempRenderer)
     }
     SDL_FreeSurface(tempsurface);
 }
+
+//textures are rendered
 
 SDL_Renderer* gameScene::loadImageToScreen(SDL_Renderer* tempRenderer , std::string imagePath, double x, int y, int width, int height,int i)
 {
@@ -103,6 +107,8 @@ void gameScene::menuScene(SDL_Event menuEvent, std::vector<button> &buttonMap,ga
          }
     }
 }
+
+// Management of the key pressed
 
 void gameScene::gameSceneLogic(SDL_Event menuEvent,std::vector<button> &buttonMap,gameScene* sceneManager, double deltaTime)
 {
