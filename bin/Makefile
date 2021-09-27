@@ -1,0 +1,2 @@
+all:
+	g++ -I../src/include -L../src/lib -o main ../class/main.cpp ../class/game.cpp ../class/init.cpp ../class/scenes.cpp ../class/gameObjects.cpp -lmingw32 -lSDL2main -lSDL2  -lSDL2_image -lSDL2_ttf -lSDL2_mixer -static-libgcc -static-libstdc++ 
