@@ -2,6 +2,8 @@
 #include "headers/game.h"
 #include "headers/init.h"
 
+// check game.cpp for the game loop. All the headers are in the folder "headers"
+
 int main(int argc, char* args[])
 {
     if(!initialize())
