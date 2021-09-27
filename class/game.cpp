@@ -14,6 +14,9 @@ gameClass::gameClass()
         this->gWindow = SDL_CreateWindow("Paint Game Jam", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,WIDTH, HEIGHT, 0);
         this->gRenderer = SDL_CreateRenderer(this->gWindow, -1 , SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     }
+
+// Gameloop -> Here wil occour all the events
+
 void gameClass::gameLoop()
 {
     bool quit = false;
@@ -33,16 +36,21 @@ void gameClass::gameLoop()
             if(eManager.type == SDL_QUIT)
              quit = true;
         }
+        // id = 0 -> menu scene , id = 1 -> game scene
         if(sceneManager.id == 0)
             sceneManager.menuScene(eManageRef,gButtons,&sceneManager);
         if(sceneManager.id == 1)
             sceneManager.gameSceneLogic(eManager,gButtons,&sceneManager,deltaTime);
+        //this set ups the renderer.
        this->gRenderer = sceneManager.updateScene(this->gRenderer);
         SDL_RenderPresent(this->gRenderer);
         SDL_RenderClear(this->gRenderer);
     }
     sceneManager.destroyTextures();
 }
+
+// when game ends
+
 void gameClass::quitGame()
 {
 
